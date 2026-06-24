@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Dear ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+background:linear-gradient(-45deg,#ff4d6d,#ff758f,#845ef7,#4dabf7);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+width:90%;
+max-width:600px;
+text-align:center;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+animation:fade .8s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+color:#ff3366;
+margin-bottom:15px;
+}
+
+h2{
+color:#7b2cbf;
+margin-bottom:15px;
+}
+
+p{
+font-size:20px;
+line-height:1.8;
+color:#444;
+}
+
+button{
+margin-top:25px;
+padding:14px 28px;
+border:none;
+border-radius:50px;
+background:#ff3366;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.page{
+display:none;
+}
+
+#cover{
+display:block;
+}
+
+.heart{
+font-size:100px;
+animation:beat 1s infinite;
+}
+
+@keyframes beat{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.25);}
+}
+
+.balloon{
+position:absolute;
+bottom:-100px;
+font-size:50px;
+animation:float linear infinite;
+}
+
+@keyframes float{
+from{transform:translateY(0);}
+to{transform:translateY(-120vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="balloon" style="left:10%;animation-duration:10s;">🎈</div>
+<div class="balloon" style="left:30%;animation-duration:12s;">🎈</div>
+<div class="balloon" style="left:55%;animation-duration:9s;">🎈</div>
+<div class="balloon" style="left:80%;animation-duration:11s;">🎈</div>
+
+<div class="container">
+
+<!-- Cover Card -->
+<div class="card page" id="cover" style="display:block;">
+<h1>💌 A Special Birthday Card</h1>
+<p>
+Someone special has a message waiting for you...
+</p>
+<button onclick="showPage(1)">
+Open Card 🎁
+</button>
+</div>
+
+<!-- Page 1 -->
+<div class="card page">
+<h2>💖 Shayari 1</h2>
+<p>
+Har khushi tumhare kadam choome,<br>
+Har sapna tumhara sach ho jaaye,<br>
+Is khaas din par meri dua hai,<br>
+Tumhari har muskaan aur bhi pyaari ho jaaye. ❤️
+</p>
+<button onclick="nextPage()">Next ➜</button>
+</div>
+
+<!-- Page 2 -->
+<div class="card page">
+<h2>🌹 Shayari 2</h2>
+<p>
+Chaand ki roshni se bhi zyada noor mile,<br>
+Phoolon se bhi zyada khushboo mile,<br>
+Bhagwan kare tumhe zindagi mein,<br>
+Har din nayi khushiyon ka tohfa mile. ✨
+</p>
+<button onclick="nextPage()">Next ➜</button>
+</div>
+
+<!-- Page 3 -->
+<div class="card page">
+<h2>✨ Shayari 3</h2>
+<p>
+Na ho kabhi khushiyon ki kami,<br>
+Na aaye kabhi aankhon mein nami,<br>
+Hamesha muskurate raho tum,<br>
+Yehi hai dil se meri dua sabhi. ❤️
+</p>
+<button onclick="nextPage()">Next ➜</button>
+</div>
+
+<!-- Page 4 -->
+<div class="card page">
+<h2>💕 Shayari 4</h2>
+<p>
+Khilte rahein phool tumhari raahon mein,<br>
+Chamakte rahein sitaare tumhari baahon mein,<br>
+Khushiyon se bhar jaaye har din tumhara,<br>
+Yahi dua hai dil ki gehraiyon mein. 🌸
+</p>
+<button onclick="nextPage()">Final Surprise ❤️</button>
+</div>
+
+<!-- Final Page -->
+<div class="card page">
+<div class="heart">❤️</div>
+
+<h1>Happy Birthday Dear ❤️</h1>
+
+<p>
+Tumhari zindagi hamesha khushiyon,<br>
+pyaar aur safalta se bhari rahe.<br><br>
+
+May all your dreams come true and<br>
+your smile never fade. ✨
+</p>
+
+<h2>🎂 Have A Wonderful Day 🎉</h2>
+
+</div>
+
+</div>
+
+<script>
+let currentPage = 0;
+const pages = document.querySelectorAll('.page');
+
+function showPage(index){
+pages[currentPage].style.display="none";
+currentPage=index;
+pages[currentPage].style.display="block";
+}
+
+function nextPage(){
+pages[currentPage].style.display="none";
+currentPage++;
+pages[currentPage].style.display="block";
+}
+</script>
+
+</body>
+</html>
